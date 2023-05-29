@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LogisticaMaritimaService {
-  private urlEndPoint: string = URL_BACKEND + 'logisticaMar/';
+  private urlEndPoint: string = URL_BACKEND + 'api/logisticaMar/';
 
   private httpHeader = new HttpHeaders({ 'Content-Type': 'application/json' });
 
@@ -25,7 +25,7 @@ export class LogisticaMaritimaService {
   }
 
   saveLogisticaMaritima(logisticaTerrestre: LogisticaMaritima): Observable<LogisticaMaritima> {
-    return this.http.post<LogisticaMaritima>(`${this.urlEndPoint}save/`, logisticaTerrestre, {
+    return this.http.post<LogisticaMaritima>(`${this.urlEndPoint}save`, logisticaTerrestre, {
       headers: this.httpHeader,
     });
   }

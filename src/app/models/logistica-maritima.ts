@@ -13,7 +13,7 @@ export class LogisticaMaritima {
     flota:Flota = new Flota();
     precioEnvio!:number;
     puerto:Puerto= new Puerto();
-    guia:Guia= new Guia();
+    numeroGuia:Guia= new Guia();
     cliente:Cliente= new Cliente();
 }
 

@@ -9,7 +9,7 @@ import { LogisticaTerrestre } from '../models/logistica-terrestre';
 })
 export class LogisticaTerrestreService {
 
-  private urlEndPoint: string = URL_BACKEND + 'logisticaTerr/';
+  private urlEndPoint: string = URL_BACKEND + 'api/logisticaTerr/';
 
   private httpHeader = new HttpHeaders({ 'Content-Type': 'application/json' });
 
@@ -26,13 +26,13 @@ export class LogisticaTerrestreService {
   }
 
   saveLogisticaTerrestre(logisticaTerrestre: LogisticaTerrestre): Observable<LogisticaTerrestre> {
-    return this.http.post<LogisticaTerrestre>(`${this.urlEndPoint}save/`, logisticaTerrestre, {
+    return this.http.post<LogisticaTerrestre>(`${this.urlEndPoint}save`, logisticaTerrestre, {
       headers: this.httpHeader,
     });
   }
 
   deleteById(IdLogistica: number): Observable<LogisticaTerrestre> {
-    return this.http.delete<LogisticaTerrestre>(`${this.urlEndPoint}delete//${IdLogistica}`, {
+    return this.http.delete<LogisticaTerrestre>(`${this.urlEndPoint}delete/${IdLogistica}`, {
       headers: this.httpHeader,
     });
   }

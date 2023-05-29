@@ -1,0 +1,32 @@
+
+<div class="container">
+<div class="row">
+    <div class="col-sm-4">
+        <button type="button" (click)="clientes()"  class="btn btn-primary">Clientes</button>
+    </div>
+    <div class="col-sm-4">
+        <button type="button" (click)="logisticaMaritima()"  class="btn btn-primary">Logisticas Maritimas</button>
+    </div>
+    <div class="col-sm-4">
+        <button type="button"  (click)="logisticaTerrestre()" class="btn btn-primary">Logisticas Terrestres</button>
+    </div>
+</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+<app-clientes *ngIf="opcionVentana == 1"></app-clientes>
+        </div>
+        <div class="col-sm-12">
+            <app-logistica-maritima *ngIf="opcionVentana == 2"></app-logistica-maritima>
+                    </div>
+        <div class="col-sm-12">
+            
+        <app-logistica-terrestre *ngIf="opcionVentana == 3"></app-logistica-terrestre>
+           </div>
+           <div class="col-sm-12">
+           <app-welcome *ngIf="opcionVentana == 4"></app-welcome>
+          </div>
+    </div>
+</div>
